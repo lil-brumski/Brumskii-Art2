@@ -25,6 +25,7 @@ This project supports only three programming languages: C++, Python and Kotlin.
    $ apt install g++ cmake kotlin 
 ```
 
+
 ```bash
    $ git clone https://github.com/lil-brumski/Brumskii-Art2.git
    $ cd Brumskii-Art2/
@@ -34,14 +35,14 @@ This project supports only three programming languages: C++, Python and Kotlin.
 #### For C++
 
 ```bash
-   $ cmake .. -DCPP=ON && make
+   $ cmake .. -DCPP=ON -DPY=OFF -DKT=OFF && make
    $ ./Brumskii-Art2
 ```
 
 #### For Python 
 
 ```bash
-   $ cmake .. -DPY=ON && make
+   $ cmake .. -DCPP=OFF -DPY=ON -DKT=OFF && make
    $ cd ../src/python/
    $ cp Brumskii-Art2.py ../../build
    $ cd ../../build
@@ -51,7 +52,7 @@ This project supports only three programming languages: C++, Python and Kotlin.
 #### For Kotlin 
 
 ```bash
-   $ cmake .. -DKT=ON && make
+   $ cmake .. -DCPP=OFF -DPY=OFF -DKT=ON && make
    $ kotlinc ../src/kotlin/Brumskii-Art2.kt -include-runtime -d Brumskii-Art2.jar
    $ java -Djava.library.path=. -jar Brumskii-Art2.jar
 ```

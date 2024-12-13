@@ -39,13 +39,14 @@ endif()
 
 option(KT "Building for Kotlin" OFF)
 option(PY "Building for Python" OFF)
-option(CPP "Building for Python" ON)
+option(CPP "Building for C++" ON)
 
 if(KT)
    message(STATUS "==========Building for Kotlin==========")
    find_package(JNI REQUIRED)
    add_library(Brumskii-Art2 SHARED src/kotlin/Brumskii-Art2-kt.cpp src/cpp/Brumskii-Art2.cpp)                            
    target_include_directories(Brumskii-Art2 PRIVATE include)
+   target_compile_options(Brumskii-Art2 PRIVATE -Wno-unused-variable)
    target_link_libraries(Brumskii-Art2 ${JNI_LIBRARIES})
 
 elseif(PY)
@@ -54,17 +55,20 @@ elseif(PY)
    add_subdirectory(pybind11)
    pybind11_add_module(BrumskiiArt2 src/python/Brumskii-Art2-py.cpp src/cpp/Brumskii-Art2.cpp)
    target_include_directories(BrumskiiArt2 PRIVATE include)
+   target_compile_options(BrumskiiArt2 PRIVATE -Wno-unused-variable)
    target_link_libraries(BrumskiiArt2 PRIVATE Python3::Python)
 
 elseif(CPP)
    message(STATUS "==========Building for C++==========")
    add_executable(Brumskii-Art2 src/cpp/main.cpp src/cpp/Brumskii-Art2.cpp)                            
    target_include_directories(Brumskii-Art2 PRIVATE include)
+   target_compile_options(Brumskii-Art2 PRIVATE -Wno-unused-variable)
 
 else()
    message(STATUS "==========Building for C++==========")
    add_executable(Brumskii-Art2 src/cpp/main.cpp src/cpp/Brumskii-Art2.cpp)                            
    target_include_directories(Brumskii-Art2 PRIVATE include)
+   target_compile_options(Brumskii-Art2 PRIVATE -Wno-unused-variable)
 
 endif()
 
