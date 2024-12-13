@@ -7,9 +7,9 @@ namespace BrumskiiArt2{
     
     Art& Art::ArtOne(){
         #if defined(_WIN32) || defined(_WIN64)
-          std::system("cls");
+          [[maybe_unused]] int value = std::system("cls");
         #else
-          std::system("clear");
+          [[maybe_unused]] int value = std::system("clear");
         #endif
         
         std::cout << "               ===                 \n";
@@ -38,9 +38,9 @@ namespace BrumskiiArt2{
         
         std::this_thread::sleep_for(std::chrono::milliseconds(1200));
         #if defined(_WIN32) || defined(_WIN64)
-          std::system("cls");
+          value = std::system("cls");
         #else
-          std::system("clear");
+          value = std::system("clear");
         #endif
         
         return *this;
@@ -48,9 +48,9 @@ namespace BrumskiiArt2{
     
     Art& Art::ArtTwo(){
         #if defined(_WIN32) || defined(_WIN64)
-          std::system("cls");
+          [[maybe_unused]] int value = std::system("cls");
         #else
-          std::system("clear");
+          [[maybe_unused]] int value = std::system("clear");
         #endif
         
         std::cout << "               ===                 \n";
@@ -79,9 +79,9 @@ namespace BrumskiiArt2{
         
         std::this_thread::sleep_for(std::chrono::milliseconds(1200));
         #if defined(_WIN32) || defined(_WIN64)
-          std::system("cls");
+          value = std::system("cls");
         #else
-          std::system("clear");
+          value = std::system("clear");
         #endif
         
         return *this;
@@ -89,9 +89,9 @@ namespace BrumskiiArt2{
     
     Art& Art::ArtThree(){
         #if defined(_WIN32) || defined(_WIN64)
-          std::system("cls");
+          [[maybe_unused]] int value = std::system("cls");
         #else
-          std::system("clear");
+          [[maybe_unused]] int value = std::system("clear");
         #endif
         //TODO 1: Add stuff
         
