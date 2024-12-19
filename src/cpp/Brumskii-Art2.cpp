@@ -1,7 +1,7 @@
 #include <Brumskii-Art2/Brumskii-Art2.hpp>
 
 namespace BrumskiiArt2{
-    Art::Art(const int& random_number){
+    Art::Art(){
         std::cout << "Welcome to Brumskii-Art2!\n";
     }
     

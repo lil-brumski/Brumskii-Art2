@@ -9,7 +9,7 @@
 namespace BrumskiiArt2{
     class Art{
     public:
-        Art(const int& random_number);
+        Art();
         Art& ArtOne();
         Art& ArtTwo();
         Art& ArtThree();

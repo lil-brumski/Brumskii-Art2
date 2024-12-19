@@ -2,7 +2,7 @@
 #include <memory>
 
 void Brumski(){
-    std::unique_ptr<BrumskiiArt2::Art> brumskiArt = std::make_unique<BrumskiiArt2::Art>(1);
+    std::unique_ptr<BrumskiiArt2::Art> brumskiArt = std::make_unique<BrumskiiArt2::Art>();
     brumskiArt->ArtOne().ArtTwo();
     brumskiArt->ArtOne().ArtTwo();
     brumskiArt->ArtOne().ArtTwo();
